@@ -21,7 +21,7 @@ To use the calculator, follow these steps:
 4. Press enter to receive the output of your calculation, in this case, 1221.
 
 # Contribute
-Your contributions are what make this project valuable and successful. Feel free to tackle any issues, make improvements, or add new features. Every little bit helps and is much appreciated. Please refer to our contributing guidelines to get started. If there are no guidelines, don't hesitate to make a pull request or open an issue.
+Your contributions are what make this project valuable and successful. Feel free to tackle any issues, make improvements, or add new features. Every little bit helps and is much appreciated. Don't hesitate to make a pull request or open an issue.
 
 JOIN THE DISCORD
 [Discord Server](https://discord.gg/Cg9RPaDVCF) 
