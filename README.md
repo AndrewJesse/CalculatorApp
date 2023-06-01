@@ -1,29 +1,32 @@
 # CalculatorApp
 
-## Overview
+# Overview
 CalculatorApp is an open-source C# console application that aims to calculate and output results based on a single string input. The application currently supports operations like addition and needs to be built with extensibility in mind. 
 
 Designed to serve as a learning and contribution repo, this project embraces an inclusive and open community where everyone is encouraged to contribute. Any improvements, feature additions, or bug fixes are highly welcomed.
 
-## Current Capabilities
+# Current Capabilities
 The calculator can currently process string input containing numerical values and operators (e.g., '2 + 14 + 24.11'), and it outputs the result of that calculation (e.g., 40.11).
 
-## Future Capabilities
+# Future Capabilities
 Upon being prompted, input a string beyond simple addition such as '12^2+(-2+4)'.
 Press enter to receive the output of your calculation, in this case, 146.
 
-## Quick Start Guide
+# Quick Start Guide
 To use the calculator, follow these steps:
 
 1. Clone the repo and compile the application.
 2. Run the console app.
-3. Upon being prompted, input a calculation string such as "12^2+(-2+4)".
-4. Press enter to receive the output of your calculation, in this case, 146.
+3. Upon being prompted, input a calculation string such as "20 + 1200 + 1".
+4. Press enter to receive the output of your calculation, in this case, 1221.
 
-## Contribute
+# Contribute
 Your contributions are what make this project valuable and successful. Feel free to tackle any issues, make improvements, or add new features. Every little bit helps and is much appreciated. Please refer to our contributing guidelines to get started. If there are no guidelines, don't hesitate to make a pull request or open an issue.
 
-## Contribution Guide
+JOIN THE DISCORD
+[Discord Server](https://discord.gg/Cg9RPaDVCF) 
+
+# Contribution Guide
 
 Follow these steps to contribute to [CalculatorApp](https://github.com/AndrewJesse/CalculatorApp) using Visual Studio's Git version control:
 
