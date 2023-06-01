@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
 namespace CalculatorApp
@@ -7,25 +8,24 @@ namespace CalculatorApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Press Q to quit the program.");
+            Console.WriteLine("CL Calculator");
 
-            while (true)
+
+            string userInput = Console.ReadLine();
+            string pattern = @"[\+]|(\d+(\.\d+)?)";
+
+            List<float> numbers = new List<float>();
+
+            foreach (Match m in Regex.Matches(userInput, pattern))
             {
-                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-                if (keyInfo.Key == ConsoleKey.Q)
+                if (float.TryParse(m.Value, out float number))
                 {
-                    Console.WriteLine("You pressed Q. The program will now quit.");
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("You pressed " + keyInfo.Key + ". Press Q to quit.");
+                    numbers.Add(number);
                 }
             }
-            Console.Write("Enter a number: ");  // Prompt the user
-            string? name = Console.ReadLine();
+            float[] numbersArray = numbers.ToArray();
 
-            Addition(1, 2, 3, 3, 4);
+            Addition(numbersArray);
 
         }
 
@@ -38,9 +38,8 @@ namespace CalculatorApp
                 sum += number;
             }
             Display(sum);
-
         }
 
-        public static float Display(float result) => result;
+        public static void Display(float result) => Console.WriteLine($"The sum is {result}");
     }
 }
