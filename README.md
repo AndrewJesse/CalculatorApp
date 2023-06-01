@@ -1,5 +1,5 @@
 # CalculatorApp
-
+![image](https://github.com/AndrewJesse/CalculatorApp/assets/53543737/e3005059-31ee-459c-99c1-79e85bce4db2)
 # Overview
 CalculatorApp is an open-source C# console application that aims to calculate and output results based on a single string input. The application currently supports operations like addition and needs to be built with extensibility in mind. 
 
