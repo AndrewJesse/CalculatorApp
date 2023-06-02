@@ -14,37 +14,23 @@ namespace CalculatorApp
             GreetingHelpers.Greeting();
             Run();
         }
-
         public static void Run()
         {
-            char userInput;
-
+            string input;
             do
             {
-                Console.WriteLine("Please enter an algebraic expression to evaluate:");
-                string input = Console.ReadLine();
+                Console.Write(">");
+                input = Console.ReadLine();
                 try
                 {
-                    AlgebraicInput algebraicInput = new AlgebraicInput(input);
-                    Expr expression = Expr.Parse(algebraicInput.ToString());
-                    Console.WriteLine("Input equation: " + expression.ToString());
+                    Expr expression = Expr.Parse(input);
+                    Console.WriteLine(">Solution: " + expression.ToString());
                 }
-                catch (ArgumentException)
+                catch (Exception)
                 {
-                    Console.WriteLine("Invalid Operation");
+                    Console.WriteLine(">Invalid Expression");
                 }
-
-                Console.WriteLine("Do you want to continue? (Y/N)");
-                userInput = Console.ReadKey().KeyChar;
-                Console.WriteLine();
-
-                List<char> validInputs = new List<char> { 'Y', 'y', 'N', 'n' };
-                if (!validInputs.Contains(userInput))
-                {
-                    Console.WriteLine("Invalid input! Please enter Y or N.");
-                }
-
-            } while (userInput != 'N' && userInput != 'n');
+            } while (!input.ToLower().Equals("quit"));
         }
     }
 }
