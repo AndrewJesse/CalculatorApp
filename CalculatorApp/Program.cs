@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using MathNet.Symbolics;
 using CalculatorApp.Helpers;
-using CalculatorApp.Input;
 using Expr = MathNet.Symbolics.SymbolicExpression;
 
 namespace CalculatorApp
