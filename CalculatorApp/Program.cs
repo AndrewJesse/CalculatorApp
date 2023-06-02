@@ -21,15 +21,23 @@ namespace CalculatorApp
             do
             {
                 Console.WriteLine("Please enter an algebraic expression to evaluate:");
-                string? input = Console.ReadLine();
-                Expr expression = Expr.Parse(input);
-                Console.WriteLine("Input equation: " + expression.ToString());
+                try
+                {
+                    string? input = Console.ReadLine();
+                    Expr expression = Expr.Parse(input);
+                    Console.WriteLine("Input equation: " + expression.ToString());
+                }
+                catch
+                {
+                    Console.WriteLine("Invalid Operation");
+                }
 
                 Console.WriteLine("Do you want to continue? (Y/N)");
                 userInput = Console.ReadKey().KeyChar;
                 Console.WriteLine();
 
-                if (userInput != 'Y' && userInput != 'y' && userInput != 'N' && userInput != 'n')
+                List<char> validInputs = new List<char> { 'Y', 'y', 'N', 'n' };
+                if (!validInputs.Contains(userInput))
                 {
                     Console.WriteLine("Invalid input! Please enter Y or N.");
                 }
