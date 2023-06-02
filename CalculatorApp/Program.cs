@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 using MathNet.Symbolics;
 using CalculatorApp.Helpers;
+using CalculatorApp.Input;
 using Expr = MathNet.Symbolics.SymbolicExpression;
 
 namespace CalculatorApp
@@ -14,6 +14,7 @@ namespace CalculatorApp
             GreetingHelpers.Greeting();
             Run();
         }
+
         public static void Run()
         {
             char userInput;
@@ -21,13 +22,14 @@ namespace CalculatorApp
             do
             {
                 Console.WriteLine("Please enter an algebraic expression to evaluate:");
+                string input = Console.ReadLine();
                 try
                 {
-                    string? input = Console.ReadLine();
-                    Expr expression = Expr.Parse(input);
+                    AlgebraicInput algebraicInput = new AlgebraicInput(input);
+                    Expr expression = Expr.Parse(algebraicInput.ToString());
                     Console.WriteLine("Input equation: " + expression.ToString());
                 }
-                catch
+                catch (ArgumentException)
                 {
                     Console.WriteLine("Invalid Operation");
                 }
@@ -44,6 +46,5 @@ namespace CalculatorApp
 
             } while (userInput != 'N' && userInput != 'n');
         }
-
     }
 }
