@@ -1,5 +1,5 @@
 # CalculatorApp
-![image](https://github.com/AndrewJesse/CalculatorApp/assets/53543737/3e257d54-f89d-4af8-8f4a-ef85a4891829)
+![image](https://github.com/AndrewJesse/CalculatorApp/assets/53543737/8bd55937-26e8-4e14-b11c-95036cb6c87d)
 # Overview
 CalculatorApp is an open-source C# console application that aims to calculate and output results based on a single string input. The application currently supports operations like addition and needs to be built with extensibility in mind. 
 
@@ -9,7 +9,7 @@ Designed to serve as a learning and contribution repo, this project embraces an 
 The calculator can currently process basic algebra input containing numerical values and operators (e.g., '2 + 6 * 24.11 - 2^4'), and it outputs the result of that calculation .
 
 # Future Capabilities
-Currently cannot take variables and solve for them yet and needs to be able to catch errors. 
+This application can only solve simple equations like 5*5, a*a, or 2 + 6 * 24.11 - 2^4. Please feel to add more features :)
 
 # Documentation
 This project currently uses this NuGet package.
