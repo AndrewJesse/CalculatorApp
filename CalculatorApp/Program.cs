@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 using MathNet.Symbolics;
+using CalculatorApp.Helpers;
+using CalculatorApp.Input;
 using Expr = MathNet.Symbolics.SymbolicExpression;
 
 namespace CalculatorApp
@@ -10,9 +11,10 @@ namespace CalculatorApp
     {
         static void Main(string[] args)
         {
-            Greeting();
+            GreetingHelpers.Greeting();
             Run();
         }
+
         public static void Run()
         {
             char userInput;
@@ -20,39 +22,29 @@ namespace CalculatorApp
             do
             {
                 Console.WriteLine("Please enter an algebraic expression to evaluate:");
-                string? input = Console.ReadLine();
-                Expr expression = Expr.Parse(input);
-                Console.WriteLine("Input equation: " + expression.ToString());
+                string input = Console.ReadLine();
+                try
+                {
+                    AlgebraicInput algebraicInput = new AlgebraicInput(input);
+                    Expr expression = Expr.Parse(algebraicInput.ToString());
+                    Console.WriteLine("Input equation: " + expression.ToString());
+                }
+                catch (ArgumentException)
+                {
+                    Console.WriteLine("Invalid Operation");
+                }
 
                 Console.WriteLine("Do you want to continue? (Y/N)");
                 userInput = Console.ReadKey().KeyChar;
                 Console.WriteLine();
 
-                if (userInput != 'Y' && userInput != 'y' && userInput != 'N' && userInput != 'n')
+                List<char> validInputs = new List<char> { 'Y', 'y', 'N', 'n' };
+                if (!validInputs.Contains(userInput))
                 {
                     Console.WriteLine("Invalid input! Please enter Y or N.");
                 }
 
             } while (userInput != 'N' && userInput != 'n');
-        }
-        public static void Greeting()
-        {
-            Console.WriteLine("Welcome to the Command Line Calculator\n");
-            Console.WriteLine("https://github.com/AndrewJesse/CalculatorApp\n");
-            Console.WriteLine(" _____________________");
-            Console.WriteLine("|  _________________  |");
-            Console.WriteLine("| |            80085| |");
-            Console.WriteLine("| |_________________| |");
-            Console.WriteLine("|  ___ ___ ___   ___  |");
-            Console.WriteLine("| | 7 | 8 | 9 | | + | |");
-            Console.WriteLine("| |___|___|___| |___| |");
-            Console.WriteLine("| | 4 | 5 | 6 | | - | |");
-            Console.WriteLine("| |___|___|___| |___| |");
-            Console.WriteLine("| | 1 | 2 | 3 | | x | |");
-            Console.WriteLine("| |___|___|___| |___| |");
-            Console.WriteLine("| | . | 0 | = | | / | |");
-            Console.WriteLine("| |___|___|___| |___| |");
-            Console.WriteLine("|_____________________|\n");
         }
     }
 }
